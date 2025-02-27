@@ -1,4 +1,4 @@
-let theme = 'dark'
+let theme
 let transition
 let toggleButtonClass
 let lightThemeBackground
@@ -8,14 +8,16 @@ let darkThemeText
 let blurDark
 let blurLight
 let rootBlockClass = null
+let defaultTheme
 
 function setTheme(options) {
-    transition = options.transition
+    transition = options.transition || 1
     toggleButtonClass = options.toggleButtonClass
     lightThemeBackground = options.lightThemeBackground
     lightThemeText = options.lightThemeText
     darkThemeBackground = options.darkThemeBackground
     darkThemeText = options.darkThemeText
+    defaultTheme = options.defaultTheme || 'dark'
     
     rootBlockClass = document.querySelector(`.${options.rootBlockClass}`) || document.body
     
@@ -25,7 +27,11 @@ function setTheme(options) {
     
     themeSwitchButton.addEventListener('click', switchTheme)
 
-    if (localStorage.getItem('theme')) theme = localStorage.getItem('theme')
+    if (localStorage.getItem('theme')) {
+        theme = localStorage.getItem('theme')
+    } else {
+        theme = defaultTheme
+    }
 
     if (theme === 'dark') {
         setDarkTheme()
@@ -64,6 +70,7 @@ function switchTheme() {
 
 const options = {
     rootBlockClass: null, // Имя класса блока, в котором будем менять тему, null - для body
+    defaultTheme: 'dark', // Тема по умолчанию
     transition: 1, // Скорость изменения цветовой темы в секкундах
     toggleButtonClass: 'theme-switch-button', // Название класса кнопки для переключения темы
     lightThemeBackground: '#e9f1ff', // Цвет фона для светлой темы

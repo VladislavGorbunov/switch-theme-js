@@ -11,11 +11,15 @@
 
 <style>
 
-    body {
-        overflow-x: hidden;
+    :root {
+        --animation_duration: 10s;
     }
 
-    code  pre {
+    html ,body {
+        overflow-x: hidden !important;
+    }
+
+    code pre {
         background: #161518;
         padding: 15px;
         border-radius: 10px;
@@ -57,11 +61,11 @@
 
     .blur-dark {
         position: absolute;
-        width: 60vh;
-        height: 60vh;
+        width: 70vh;
+        height: 70vh;
         background: rgb(171, 18, 254);
-        right: -17vh;
-        top: -17vh;
+        right: 0vh;
+        top: 0vh;
         border-radius: 50%;
         filter: blur(70px);
         opacity: 0.3;
@@ -69,26 +73,32 @@
 
     .blur-light {
         position: absolute;
-        width: 60vh;
-        height: 60vh;
+        width: 70vh;
+        height: 70vh;
         background: rgb(54, 185, 255);
-        right: -17vh;
-        top: -17vh;
+        right: 0vh;
+        top: 0vh;
         border-radius: 50%;
         filter: blur(70px);
+        transform: rotate(0deg);
         opacity: 0.3;
+    } 
+
+    .git-link {
+        
+        font-size: 48px;
+        text-align: center;
     }
 
 </style>
 
-<div class="blur-dark"></div>
-<div class="blur-light"></div>
+    <div class="blur-dark"></div>
+    <div class="blur-light"></div>
 
 <div class="container position-relative">
 
-    
-
     <button class="btn btn-primary theme-switch-button"><i class="bi bi-brightness-high"></i> Сменить тему</button>
+    
     <h1 class="text-center">SwitchTheme</h1>
     <p class="text-center">Простой скрипт переключения цветовой темы</p>
     <hr>
@@ -102,12 +112,14 @@
     </ol>
    
     <h4 class="text-center mt-4 mb-4">Пример кода:</h4>
+    <div class="col-12">
     <code><pre>
     &lt;script src="<span class="script-link">switchTheme.js</span>">&lt;/script>
 
     &lt;script>
         const options = {
             rootBlockClass: <span class="option">null</span>, <span class="comment"> //-------------------- Имя класса блока, в котором будем менять тему или null - для работы с &lt;body></body></span>
+            defaultTheme: <span class="option">'dark'</span>, <span class="comment"> //-------------------- Тема по умолчанию, dark или light</span>
             transition: <span class="option">0.5</span>, <span class="comment"> //------------------------- Скорость изменения цветовой темы в секундах</span>
             toggleButtonClass: <span class="option">'theme-switch-button'</span>, <span class="comment"> // Название класса кнопки для переключения темы</span>
             lightThemeBackground: <span class="option">'#e9f1ff'</span>, <span class="comment"> //--------- Цвет фона для светлой темы</span>
@@ -119,7 +131,11 @@
         setTheme(options)
     &lt;/script>
     </pre></code>
+    </div>
 
+    <div class="p-4 col-auto mx-auto text-center">
+        <a href="https://github.com/VladislavGorbunov/switch-theme-js" class="git-link" target="_blank"><i class="bi bi-github"></i></a>
+    </div>
 </div>
 
 
