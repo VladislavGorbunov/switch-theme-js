@@ -17,3 +17,4 @@
     </script>
 </pre>
 
+<a href="https://vladislavgorbunov.github.io/switch-theme-js/">ДЕМО</a>
