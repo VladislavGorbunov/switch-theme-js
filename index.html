@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>SwitchTheme - скрипт переключения цветовой темы для сайта</title>
+</head>
+<body>
+
+<style>
+
+    body {
+        overflow-x: hidden;
+    }
+
+    code  pre {
+        background: #161518;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 15px;
+        font-size: 14px;
+        color: rgb(32, 220, 253);
+    }
+
+    code .option {
+        color: gold;
+    }
+
+    code .comment {
+        color: #969696;
+    }
+
+    .theme-switch-button {
+        background: rgb(34, 89, 255);
+        border: none;
+        display: block;
+        margin: 20px auto;
+        padding: 12px 30px;
+        border-radius: 30px 10px 30px 10px;
+    }
+
+    .script-link {
+        color: gold;
+    }
+
+    hr {
+        color: rgb(98, 103, 108);
+        margin: 20px;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 34px;
+    }
+
+    .blur-dark {
+        position: absolute;
+        width: 60vh;
+        height: 60vh;
+        background: rgb(171, 18, 254);
+        right: -17vh;
+        top: -17vh;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.3;
+    }
+
+    .blur-light {
+        position: absolute;
+        width: 60vh;
+        height: 60vh;
+        background: rgb(54, 185, 255);
+        right: -17vh;
+        top: -17vh;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.3;
+    }
+
+</style>
+
+<div class="blur-dark"></div>
+<div class="blur-light"></div>
+
+<div class="container position-relative">
+
+    
+
+    <button class="btn btn-primary theme-switch-button"><i class="bi bi-brightness-high"></i> Сменить тему</button>
+    <h1 class="text-center">SwitchTheme</h1>
+    <p class="text-center">Простой скрипт переключения цветовой темы</p>
+    <hr>
+    <h4 class="text-center">Инструкция по установке:</h4>
+
+    <ol>
+        <li>Скачать файл скрипта: <a href="switchTheme.js" class="link-underline link-underline-opacity-0" download><i class="bi bi-file-earmark-arrow-down"></i> Скачать скрипт</a></li>
+        <li>Подключить скрипт <code>switchTheme.js</code> на странице</li>
+        <li>Задать настройки скрипта через объект options</li>
+        <li>Вызвать функцию <code>setTheme(options)</code> и передать ей объект с настройками </li>
+    </ol>
+   
+    <h4 class="text-center mt-4 mb-4">Пример кода:</h4>
+    <code><pre>
+    &lt;script src="<span class="script-link">switchTheme.js</span>">&lt;/script>
+
+    &lt;script>
+        const options = {
+            rootBlockClass: <span class="option">null</span>, <span class="comment"> //-------------------- Имя класса блока, в котором будем менять тему или null - для работы с &lt;body></body></span>
+            transition: <span class="option">0.5</span>, <span class="comment"> //------------------------- Скорость изменения цветовой темы в секундах</span>
+            toggleButtonClass: <span class="option">'theme-switch-button'</span>, <span class="comment"> // Название класса кнопки для переключения темы</span>
+            lightThemeBackground: <span class="option">'#e9f1ff'</span>, <span class="comment"> //--------- Цвет фона для светлой темы</span>
+            lightThemeText: <span class="option">'#111'</span>, <span class="comment"> //------------------ Цвет текста для светлой темы</span>
+            darkThemeBackground: <span class="option">'#1c1b1f'</span>, <span class="comment"> //---------- Цвет фона для тёмной темы</span>
+            darkThemeText: <span class="option">'#e0e6f7'</span> <span class="comment"> //----------------- Цвет текста для тёмной темы</span>
+        }
+
+        setTheme(options)
+    &lt;/script>
+    </pre></code>
+
+</div>
+
+
+<script src="switchTheme.js"></script>
+
+
+<script>
+    const options = {
+        rootBlockClass: null, // Имя класса блока, в котором будем менять тему, null - для body
+        transition: 1, // Скорость изменения цветовой темы в секундах
+        toggleButtonClass: 'theme-switch-button', // Название класса кнопки для переключения темы
+        lightThemeBackground: '#e9f1ff', // Цвет фона для светлой темы
+        lightThemeText: '#111', // Цвет текста для светлой темы
+        darkThemeBackground: '#1c1b1f', // Цвет фона для тёмной темы
+        darkThemeText: '#e0e6f7' // Цвет текста для тёмной темы
+    }
+
+    setTheme(options)
+</script>
+    
+</body>
+</html>
