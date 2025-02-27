@@ -4,7 +4,8 @@
 
     <script>
         const options = {
-            rootBlockClass: null,                        // Имя класса блока, в котором будем менять тему или null - для работы с &lt;body></body>
+            rootBlockClass: null,                        // Имя класса блока, в котором будем менять тему, или null - для работы с <body>
+            defaultTheme: 'dark',                        // Тема по умолчанию, dark или light
             transition: 0.5,                             // Скорость изменения цветовой темы в секундах
             toggleButtonClass: 'theme-switch-button',    // Название класса кнопки для переключения темы
             lightThemeBackground: '#e9f1ff',             // Цвет фона для светлой темы
