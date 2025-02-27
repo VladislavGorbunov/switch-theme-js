@@ -68,15 +68,3 @@ function switchTheme() {
 
 }
 
-const options = {
-    rootBlockClass: null, // Имя класса блока, в котором будем менять тему, null - для body
-    defaultTheme: 'dark', // Тема по умолчанию
-    transition: 1, // Скорость изменения цветовой темы в секкундах
-    toggleButtonClass: 'theme-switch-button', // Название класса кнопки для переключения темы
-    lightThemeBackground: '#e9f1ff', // Цвет фона для светлой темы
-    lightThemeText: '#111', // Цвет текста для светлой темы
-    darkThemeBackground: '#1c1b1f', // Цвет фона для тёмной темы
-    darkThemeText: '#e0e6f7' // Цвет текста для тёмной темы
-}
-
-setTheme(options)
