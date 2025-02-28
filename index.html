@@ -116,6 +116,12 @@
     <h4 class="text-center mt-4 mb-4">Пример кода:</h4>
     <div class="col-12">
     <code><pre>
+
+    &lt;script>
+        let blurDark = document.querySelector('.blur-dark')
+        let blurLight = document.querySelector('.blur-light')
+    &lt;/script>
+
     &lt;script src="<span class="script-link">switchTheme.js</span>">&lt;/script>
 
     &lt;script>
@@ -128,9 +134,25 @@
             lightThemeText: <span class="option">'#111'</span>, <span class="comment"> //------------------ Цвет текста для светлой темы</span>
             darkThemeBackground: <span class="option">'#1c1b1f'</span>, <span class="comment"> //---------- Цвет фона для тёмной темы</span>
             darkThemeText: <span class="option">'#e0e6f7'</span> <span class="comment"> //----------------- Цвет текста для тёмной темы</span>
+            customFunctionDark: <span class="option">darkBlur</span>, <span class="comment"> // ----------- Имя пользовательской функции срабатывающей при тёмном режиме</span>
+            customFunctionLight: <span class="option">lightBlur</span>, <span class="comment"> // --------- Имя пользовательской функции срабатывающей при светлом режиме</span>
         }
 
         setTheme(options)
+
+        <span class="comment">// * Пользовательские функции *</span>
+
+        <span class="comment">// Эта функция сработает при включенном тёмном режиме</span>
+        function darkBlur() {
+            blurDark.style.display = 'block'
+            blurLight.style.display = 'none'
+        }
+    
+        <span class="comment">// Эта функция сработает при включенном светлом режиме</span>
+        function lightBlur() {
+            blurDark.style.display = 'none'
+            blurLight.style.display = 'block'
+        }
     &lt;/script>
     </pre></code>
     </div>
@@ -141,8 +163,12 @@
 </div>
 
 
-<script src="switchTheme.js"></script>
+<script>
+    let blurDark = document.querySelector('.blur-dark')
+    let blurLight = document.querySelector('.blur-light')
+</script>
 
+<script src="switchTheme.js"></script>
 
 <script>
     
@@ -154,10 +180,22 @@
         lightThemeBackground: '#e9f1ff', // Цвет фона для светлой темы
         lightThemeText: '#111', // Цвет текста для светлой темы
         darkThemeBackground: '#1c1b1f', // Цвет фона для тёмной темы
-        darkThemeText: '#e0e6f7' // Цвет текста для тёмной темы
+        darkThemeText: '#e0e6f7', // Цвет текста для тёмной темы
+        customFunctionDark: darkBlur, // Имя пользовательской функции срабатывающей при тёмном режиме
+        customFunctionLight: lightBlur, // Имя пользовательской функции срабатывающей при светлом режиме
     }
 
     setTheme(options)
+
+    function darkBlur() {
+        blurDark.style.display = 'block'
+        blurLight.style.display = 'none'
+    }
+
+    function lightBlur() {
+        blurDark.style.display = 'none'
+        blurLight.style.display = 'block'
+    }
 </script>
     
 </body>

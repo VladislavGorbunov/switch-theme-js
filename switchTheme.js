@@ -5,10 +5,10 @@ let lightThemeBackground
 let lightThemeText
 let darkThemeBackground
 let darkThemeText
-let blurDark
-let blurLight
 let rootBlockClass = null
 let defaultTheme
+let customFunctionDark
+let customFunctionLight
 
 function setTheme(options) {
     transition = options.transition || 1
@@ -18,12 +18,12 @@ function setTheme(options) {
     darkThemeBackground = options.darkThemeBackground
     darkThemeText = options.darkThemeText
     defaultTheme = options.defaultTheme || 'dark'
-    
+    customFunctionDark = options.customFunctionDark
+    customFunctionLight = options.customFunctionLight
+
     rootBlockClass = document.querySelector(`.${options.rootBlockClass}`) || document.body
     
     const themeSwitchButton = document.querySelector(`.${ toggleButtonClass }`)
-    blurDark = document.querySelector('.blur-dark')
-    blurLight = document.querySelector('.blur-light')
     
     themeSwitchButton.addEventListener('click', switchTheme)
 
@@ -43,17 +43,23 @@ function setTheme(options) {
 function setDarkTheme() {
     rootBlockClass.style.background = darkThemeBackground
     rootBlockClass.style.color = darkThemeText
-    blurDark.style.display = 'block'
-    blurLight.style.display = 'none'
+    
     localStorage.setItem('theme', 'dark')
+
+    if (typeof customFunctionDark == 'function') {
+        customFunctionDark()
+    }
 }
 
 function setLightTheme() {
     rootBlockClass.style.background = lightThemeBackground
     rootBlockClass.style.color = lightThemeText
-    blurDark.style.display = 'none'
-    blurLight.style.display = 'block'
+    
     localStorage.setItem('theme', 'white')
+
+    if (typeof customFunctionLight == 'function') {
+        customFunctionLight()
+    }
 }
 
 function switchTheme() {
