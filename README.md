@@ -1,4 +1,5 @@
 <h1>Скрипт именения цветовой темы для сайтов на Javascript</h1>
+<img src="switch.gif">
 <pre>
     <script src="<span class="script-link">switchTheme.js</span>"></script>
 
