@@ -1,0 +1,80 @@
+:root {
+    --animation_duration: 10s;
+}
+
+html ,body {
+    overflow-x: hidden !important;
+}
+
+code pre {
+    background: #161518;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgb(32, 220, 253);
+}
+
+code .option {
+    color: gold;
+}
+
+code .comment {
+    color: #969696;
+}
+
+.theme-switch-button {
+    background: rgb(34, 89, 255);
+    border: none;
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    border-radius: 30px 10px 30px 10px;
+}
+
+.script-link {
+    color: gold;
+}
+
+hr {
+    color: rgb(98, 103, 108);
+    margin: 20px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 34px;
+}
+
+.blur-dark {
+    position: absolute;
+    width: 70vh;
+    height: 70vh;
+    background: rgb(132, 18, 254);
+    right: 0vh;
+    top: 0vh;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.3;
+   
+}
+
+.blur-light {
+    position: absolute;
+    width: 70vh;
+    height: 70vh;
+    background: rgb(54, 185, 255);
+    right: 0vh;
+    top: 0vh;
+    border-radius: 50%;
+    filter: blur(70px);
+    transform: rotate(0deg);
+    opacity: 0.3;
+} 
+
+
+.git-link {
+    
+    font-size: 48px;
+    text-align: center;
+}
