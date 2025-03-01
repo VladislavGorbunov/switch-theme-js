@@ -12,7 +12,7 @@
             lightThemeBackground: '#e9f1ff',             // Цвет фона для светлой темы
             lightThemeText: '#111',                      // Цвет текста для светлой темы
             darkThemeBackground: '#1c1b1f',              // Цвет фона для тёмной темы
-            darkThemeText: '#e0e6f7'                     // Цвет текста для тёмной темы
+            darkThemeText: '#e0e6f7',                    // Цвет текста для тёмной темы
             customFunctionDark: darkBlur,                // Имя пользовательской функции срабатывающей при тёмном режиме
             customFunctionLight: lightBlur,              // Имя пользовательской функции срабатывающей при светлом режиме
         }
